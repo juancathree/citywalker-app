@@ -2,26 +2,7 @@ import { CreateRequest } from './createRequest'
 
 import type { User } from 'src/types/user'
 
-// @ts-ignore: Suppress ts(2339) error for this line
-const API_URL = process.env.EXPO_PUBLIC_API_URL
-
-export const AskConfirmCode = async (user: User): Promise<any | null> => {
-  const response = await fetch(`${API_URL}/user/code`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(user)
-  })
-
-  const json = await response.json()
-
-  if (json['error']) {
-    throw new Error(json['msg'])
-  }
-
-  return json['data']
-}
+export const AskConfirmCode = async (user: User) => await CreateRequest('/user/code', 'POST', user)
 
 export const CreateAccount = async (user: User) => await CreateRequest('/user/create', 'POST', user)
 
