@@ -1,0 +1,708 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginScreen should render 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    [
+      {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+              }
+            }
+          >
+            <Image
+              source={1}
+              style={
+                [
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <RCTSafeAreaView
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexBasis": "0%",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                    "justifyContent": "center",
+                    "paddingBottom": 40,
+                    "paddingLeft": 40,
+                    "paddingRight": 40,
+                    "paddingTop": 40,
+                  }
+                }
+                testID="login"
+              >
+                <View
+                  style={
+                    {
+                      "flexDirection": "row",
+                    }
+                  }
+                  testID="login-title"
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "elevation": 12,
+                          "fontSize": 60,
+                          "shadowColor": "#000",
+                          "shadowOffset": {
+                            "height": 1,
+                            "width": 1,
+                          },
+                          "shadowOpacity": 0.19,
+                          "shadowRadius": 20,
+                        },
+                        {
+                          "color": "#404040",
+                          "fontFamily": "Kaushan",
+                        },
+                      ]
+                    }
+                  >
+                    City
+                  </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "elevation": 12,
+                          "fontSize": 60,
+                          "shadowColor": "#000",
+                          "shadowOffset": {
+                            "height": 1,
+                            "width": 1,
+                          },
+                          "shadowOpacity": 0.19,
+                          "shadowRadius": 20,
+                        },
+                        {
+                          "color": "rgb(0, 122, 255)",
+                          "fontFamily": "Kaushan",
+                          "marginLeft": -10,
+                        },
+                      ]
+                    }
+                  >
+                    Walker
+                  </Text>
+                </View>
+                <Text
+                  style={
+                    [
+                      {
+                        "fontSize": 24,
+                        "marginBottom": 40,
+                        "textAlign": "center",
+                      },
+                      {
+                        "fontFamily": "Kaushan",
+                      },
+                    ]
+                  }
+                >
+                  screens.login.description
+                </Text>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "gap": 12,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "center",
+                            "borderRadius": 4,
+                            "borderWidth": 1,
+                            "display": "flex",
+                            "elevation": 3,
+                            "flexDirection": "row",
+                            "paddingBottom": 12,
+                            "paddingLeft": 12,
+                            "paddingRight": 12,
+                            "paddingTop": 12,
+                            "shadowColor": "#000",
+                            "shadowOffset": {
+                              "height": 1,
+                              "width": 1,
+                            },
+                            "shadowOpacity": 0.125,
+                            "shadowRadius": 3,
+                          },
+                          {
+                            "backgroundColor": "rgb(255",
+                            "borderColor": "transparent",
+                          },
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          {
+                            "alignItems": "center",
+                            "justifyContent": "center",
+                            "marginRight": 8,
+                            "width": 32,
+                          }
+                        }
+                      >
+                        <Text />
+                      </View>
+                      <TextInput
+                        autofocus={true}
+                        collapsable={false}
+                        handlerTag={1}
+                        handlerType="NativeViewGestureHandler"
+                        onBlur={[Function]}
+                        onChangeText={[Function]}
+                        onFocus={[Function]}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
+                        onSubmitEditing={[Function]}
+                        placeholder="components.formInput.email"
+                        placeholderTextColor="rgb(216, 216, 216)"
+                        returnKeyType="next"
+                        secureTextEntry={false}
+                        style={
+                          {
+                            "flexBasis": "0%",
+                            "flexGrow": 1,
+                            "flexShrink": 1,
+                          }
+                        }
+                        testID="email-input"
+                      />
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "center",
+                            "borderRadius": 4,
+                            "borderWidth": 1,
+                            "display": "flex",
+                            "elevation": 3,
+                            "flexDirection": "row",
+                            "paddingBottom": 12,
+                            "paddingLeft": 12,
+                            "paddingRight": 12,
+                            "paddingTop": 12,
+                            "shadowColor": "#000",
+                            "shadowOffset": {
+                              "height": 1,
+                              "width": 1,
+                            },
+                            "shadowOpacity": 0.125,
+                            "shadowRadius": 3,
+                          },
+                          {
+                            "backgroundColor": "rgb(255",
+                            "borderColor": "transparent",
+                          },
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          {
+                            "alignItems": "center",
+                            "justifyContent": "center",
+                            "marginRight": 8,
+                            "width": 32,
+                          }
+                        }
+                      >
+                        <Text />
+                      </View>
+                      <TextInput
+                        autofocus={false}
+                        collapsable={false}
+                        handlerTag={2}
+                        handlerType="NativeViewGestureHandler"
+                        onBlur={[Function]}
+                        onChangeText={[Function]}
+                        onFocus={[Function]}
+                        onGestureHandlerEvent={[Function]}
+                        onGestureHandlerStateChange={[Function]}
+                        onSubmitEditing={[Function]}
+                        placeholder="components.formInput.password"
+                        placeholderTextColor="rgb(216, 216, 216)"
+                        returnKeyType="done"
+                        secureTextEntry={true}
+                        style={
+                          {
+                            "flexBasis": "0%",
+                            "flexGrow": 1,
+                            "flexShrink": 1,
+                          }
+                        }
+                        testID="password-input"
+                      />
+                      <View
+                        accessibilityState={
+                          {
+                            "busy": undefined,
+                            "checked": undefined,
+                            "disabled": undefined,
+                            "expanded": undefined,
+                            "selected": undefined,
+                          }
+                        }
+                        accessibilityValue={
+                          {
+                            "max": undefined,
+                            "min": undefined,
+                            "now": undefined,
+                            "text": undefined,
+                          }
+                        }
+                        accessible={true}
+                        collapsable={false}
+                        focusable={true}
+                        onClick={[Function]}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        style={
+                          {
+                            "opacity": 1,
+                          }
+                        }
+                      >
+                        <Text />
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      {
+                        "alignSelf": "flex-start",
+                      }
+                    }
+                    testID="forgotPassword-link"
+                  >
+                    <View
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": undefined,
+                          "expanded": undefined,
+                          "selected": undefined,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        {
+                          "opacity": 1,
+                        }
+                      }
+                      testID="link"
+                    >
+                      <Text
+                        style={
+                          {
+                            "color": "rgb(0",
+                            "fontWeight": "bold",
+                          }
+                        }
+                      >
+                        screens.login.forgotPassword
+                      </Text>
+                    </View>
+                  </View>
+                  <View
+                    style={
+                      {
+                        "marginTop": 8,
+                      }
+                    }
+                  >
+                    <View
+                      accessibilityState={
+                        {
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": undefined,
+                          "expanded": undefined,
+                          "selected": undefined,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      collapsable={false}
+                      focusable={true}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        {
+                          "backgroundColor": "rgb(0",
+                          "borderRadius": 4,
+                          "elevation": 3,
+                          "justifyContent": "center",
+                          "opacity": 1,
+                          "paddingBottom": 12,
+                          "paddingLeft": 60,
+                          "paddingRight": 60,
+                          "paddingTop": 12,
+                          "shadowColor": "#000",
+                          "shadowOffset": {
+                            "height": 1,
+                            "width": 1,
+                          },
+                          "shadowOpacity": 0.125,
+                          "shadowRadius": 3,
+                          "width": "75%",
+                        }
+                      }
+                      testID="loading-button"
+                    >
+                      <Text
+                        style={
+                          {
+                            "color": "#fff",
+                            "fontWeight": "bold",
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        screens.login.loginButton
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "marginTop": 30,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "black",
+                        "flex": 1,
+                        "height": 1,
+                      }
+                    }
+                  />
+                  <View>
+                    <Text
+                      style={
+                        {
+                          "textAlign": "center",
+                          "width": 50,
+                        }
+                      }
+                    >
+                      components.divider.or
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "black",
+                        "flex": 1,
+                        "height": 1,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    {
+                      "display": "flex",
+                      "gap": 20,
+                      "marginTop": 20,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "opacity": 1,
+                      }
+                    }
+                  >
+                    <Image
+                      source={1}
+                      style={
+                        {
+                          "borderColor": "#d1d5db",
+                          "borderRadius": 4,
+                          "borderWidth": 1,
+                          "height": 40,
+                          "width": 180,
+                        }
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "flexDirection": "row",
+                      "marginTop": 40,
+                    }
+                  }
+                  testID="createAccount-container"
+                >
+                  <Text>
+                    screens.login.notAccount
+                  </Text>
+                  <View
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "opacity": 1,
+                      }
+                    }
+                    testID="link"
+                  >
+                    <Text
+                      style={
+                        {
+                          "color": "rgb(0",
+                          "fontWeight": "bold",
+                        }
+                      }
+                    >
+                      screens.login.register
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </RCTSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitleVisible={true}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={false}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="LoginScreen"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

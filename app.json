@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "rn-app",
-    "slug": "rn-app",
+    "name": "citywalker",
+    "slug": "citywalker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "com.juancathree.citywalker",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -12,16 +13,50 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "jsEngine": "hermes",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.juancathree.citywalker",
+      "infoPlist": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.372136185284-dgo8ncnuj5d54kn1v0q5tdan9ptr6t2l"
+            ]
+          }
+        ]
+      }
     },
     "android": {
+      "jsEngine": "hermes",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.juancathree.citywalker"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "build": {
+      "babel": {
+        "include": []
+      }
     }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-localization",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.372136185284-dgo8ncnuj5d54kn1v0q5tdan9ptr6t2l"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bf875659-d21a-4295-852c-1d2318ccfdf0"
+      }
+    },
+    "owner": "juancathree"
   }
 }
