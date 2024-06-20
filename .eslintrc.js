@@ -2,14 +2,19 @@ module.exports = {
   extends: [
     'universe/native',
     'universe/shared/typescript-analysis',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'prettier'
   ],
-  plugins: ['autofix', 'react-hooks'],
+  plugins: ['autofix', 'react-hooks', 'prettier'],
+  parser: '@typescript-eslint/parser',
   overrides: [
     {
       files: ['*.ts', '*.tsx', '*.d.ts'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: './tsconfig.json'
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
+        sourceType: 'module'
       }
     }
   ],
@@ -55,7 +60,8 @@ module.exports = {
           caseInsensitive: true
         }
       }
-    ]
+    ],
+    'prettier/prettier': 'error'
     // 'padding-line-between-statements': [
     //   'error',
     //   { blankLine: 'always', prev: '*', next: '*' },

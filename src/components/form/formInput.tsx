@@ -42,9 +42,7 @@ export const FormInput = forwardRef<TextInput, Props>(({ name, onBlur, ...rest }
     <View
       style={[
         styles.container,
-        tailwind`bg-[${colors.card}] ${
-          isFocused ? `border-[${colors.primary}]` : `border-transparent`
-        }`
+        tailwind`bg-[${colors.card}] ${isFocused ? `border-[${colors.primary}]` : `border-transparent`}`
       ]}>
       <View style={styles.icon}>
         <FontAwesome
@@ -54,17 +52,17 @@ export const FormInput = forwardRef<TextInput, Props>(({ name, onBlur, ...rest }
         />
       </View>
       <TextInput
-        {...rest}
-        testID={`${name}-input`}
         ref={ref}
         onFocus={handleFocus}
         style={tailwind`flex-1`}
         placeholderTextColor={colors.border}
         onBlur={handleBlur}
         secureTextEntry={name === 'password' || name === 'confirmPassword' ? !seePass : false}
+        testID={`${name}-input`}
+        {...rest}
       />
       {name === 'password' || name === 'confirmPassword' ? (
-        <TouchableOpacity onPress={() => setSeePass(!seePass)}>
+        <TouchableOpacity onPress={() => setSeePass(!seePass)} testID="seePassIcon">
           <FontAwesome
             name={seePass ? 'eye' : 'eye-slash'}
             size={23}

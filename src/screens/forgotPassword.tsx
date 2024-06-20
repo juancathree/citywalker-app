@@ -33,9 +33,7 @@ export const ForgotPasswordScreen = ({ route }: Props) => {
       .string()
       .required(t('schema.password.required'))
       .min(8, t('schema.password.minLength')),
-    confirmPassword: yup
-      .string()
-      .equals([yup.ref('password')], t('schema.password.confirmPassword'))
+    confirmPassword: yup.string().equals([yup.ref('password')], t('schema.password.bothMustMatch'))
   })
 
   const action = (data: User) => {

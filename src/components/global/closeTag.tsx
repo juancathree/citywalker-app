@@ -14,7 +14,6 @@ export function CloseTag() {
       color="black"
       onPress={() => navigation.goBack()}
       style={tailwind`self-end justify-start`}
-      testID="close-tag"
     />
   )
 }

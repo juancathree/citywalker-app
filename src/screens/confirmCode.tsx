@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 
 import { useNavigation, type RouteProp } from '@react-navigation/native'
 import { useTranslation } from 'react-i18next'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, View, Text } from 'react-native'
 import Toast from 'react-native-toast-message'
-import { OTP, Background } from 'src/components'
+import { OTP, Background, CloseTag } from 'src/components'
 import { AskConfirmCode } from 'src/services/auth'
 import tailwind from 'twrnc'
 
@@ -30,7 +30,7 @@ export const ConfirmCodeScreen = ({ route }: Props) => {
       } catch {
         Toast.show({
           type: 'error',
-          text1: t('screens.confirmCode.errorFetchingCode')
+          text1: t('toast.confirmCode.errorFetchingCode')
         })
         navigation.goBack()
       }
@@ -43,8 +43,22 @@ export const ConfirmCodeScreen = ({ route }: Props) => {
   return (
     <Background>
       <SafeAreaView style={tailwind`flex-1`}>
-        <OTP user={user} />
+        <View style={styles.closeTag}>
+          <CloseTag />
+        </View>
+        <View style={styles.container}>
+          <Text style={styles.title}>{t('screens.confirmCode.title')}</Text>
+          <Text style={styles.description}>{t('screens.confirmCode.description')}</Text>
+          <OTP user={user} />
+        </View>
       </SafeAreaView>
     </Background>
   )
+}
+
+const styles = {
+  closeTag: tailwind`p-10 absolute w-full`,
+  container: tailwind`p-10 flex-1 justify-center items-center`,
+  title: tailwind`text-8 text-center`,
+  description: tailwind`text-center`
 }

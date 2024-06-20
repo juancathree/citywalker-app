@@ -11,7 +11,7 @@ export function Link({ text, action }: Props) {
   const { colors } = useTheme()
 
   return (
-    <TouchableOpacity onPress={action} testID="link">
+    <TouchableOpacity onPress={action}>
       <Text style={tailwind`text-[${colors.primary}] font-bold`}>{text}</Text>
     </TouchableOpacity>
   )

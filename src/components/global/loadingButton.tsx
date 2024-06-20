@@ -11,15 +11,11 @@ type Props = {
 export function LoadingButton({ text, onPress, isLoading = false }: Props) {
   const { colors } = useTheme()
   return (
-    <TouchableOpacity
-      style={styles.button(colors.primary)}
-      activeOpacity={0.8}
-      onPress={onPress}
-      testID="loading-button">
+    <TouchableOpacity style={styles.button(colors.primary)} activeOpacity={0.8} onPress={onPress}>
       {!isLoading ? (
         <Text style={styles.text}>{text}</Text>
       ) : (
-        <ActivityIndicator color={colors.card} testID="loading-button-activity" />
+        <ActivityIndicator color={colors.card} />
       )}
     </TouchableOpacity>
   )

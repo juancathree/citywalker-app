@@ -1,8 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import AccountScreen from 'src/screens/account'
-import HomeScreen from 'src/screens/home'
-import TravelsScreen from 'src/screens/travels'
+import { AccountScreen, HomeScreen, TravelsScreen } from 'src/screens'
 
 export type AuthorizedScreensParamList = {
   Index: undefined

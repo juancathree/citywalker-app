@@ -15,7 +15,6 @@ export function ArrowBack({ action }: Props) {
       color="black"
       onPress={action}
       style={tailwind`self-start`}
-      testID="arrow-back"
     />
   )
 }

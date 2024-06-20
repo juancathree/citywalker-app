@@ -1,5 +1,5 @@
 import { Text } from 'react-native'
 
-export default function TravelsScreen() {
+export function TravelsScreen() {
   return <Text>Travels</Text>
 }

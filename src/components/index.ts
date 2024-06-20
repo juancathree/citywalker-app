@@ -1,5 +1,6 @@
 export { LoginTitle } from './login/loginTitle'
 export { ArrowBack } from './global/arrowBack'
+export { Modal } from './global/modal'
 export { Divider } from './global/divider'
 export { CloseTag } from './global/closeTag'
 export { StatusBar } from './global/statusBar'

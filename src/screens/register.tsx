@@ -26,7 +26,10 @@ export const RegisterScreen = () => {
 
   const schema = yup.object({
     email: yup.string().required(t('schema.email.required')).email(t('schema.email.invalid')),
-    password: yup.string().required(t('schema.password.required')).min(8, t('schema.password.min')),
+    password: yup
+      .string()
+      .required(t('schema.password.required'))
+      .min(8, t('schema.password.minLength')),
     confirmPassword: yup.string().equals([yup.ref('password')], t('schema.password.bothMustMatch')),
     fullName: yup.string().required(t('schema.fullName.required'))
   })

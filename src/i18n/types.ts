@@ -19,7 +19,6 @@ export type Translation = {
         button: string
       }
       confirmCode: {
-        wrongOTPCode: string
         errorFetchingCode: string
         title: string
         description: string
@@ -36,8 +35,6 @@ export type Translation = {
         confirmPassword: string
       }
       forgotPassword: {
-        title: string
-        subtitle: string
         button: string
       }
     }
@@ -48,7 +45,7 @@ export type Translation = {
       }
       password: {
         required: string
-        min: string
+        minLength: string
         bothMustMatch: string
       }
       fullName: {
@@ -57,8 +54,7 @@ export type Translation = {
     }
     services: {
       networkError: string
-      '/user/googleLogin-error': string
-      '/user/googleCreate-error': string
+      '/user/continueWithGoogle-error': string
       '/user/create-error': string
       '/user/login-error': string
       '/user/forgotPassword-error': string
@@ -71,6 +67,13 @@ export type Translation = {
         continueWithGoogleFailed: string
         passwordReseted: string
         resetPasswordFailed: string
+      }
+      confirmCode: {
+        errorFetchingCode: string
+      }
+      otp: {
+        tooMuchAttempts: string
+        wrongOTPCode: string
       }
     }
   }

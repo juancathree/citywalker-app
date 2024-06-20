@@ -1,5 +1,5 @@
 import { Text } from 'react-native'
 
-export default function AccountScreen() {
+export function AccountScreen() {
   return <Text>Account</Text>
 }

@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import { useTranslation } from 'react-i18next'
-import { Incubator } from 'react-native-ui-lib'
 import { Form } from 'src/components/form/form'
-import tailwind from 'twrnc'
+import { Modal } from 'src/components/global/modal'
 import * as yup from 'yup'
 
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -26,15 +25,6 @@ export function ForgotPassword({ isVisible, setVisible }: Props) {
     email: yup.string().required(t('schema.email.required')).email(t('schema.email.invalid'))
   })
 
-  const headerProps = {
-    title: t('components.forgotPassword.title'),
-    titleStyle: styles.titleStyle,
-    subtitle: t('components.forgotPassword.subtitle'),
-    subtitleStyle: styles.subtitleStyle,
-    showKnob: false,
-    showDivider: false
-  }
-
   const onSubmit = (d: typeof user) => {
     navigation.navigate('ConfirmCode', {
       user: d
@@ -43,14 +33,7 @@ export function ForgotPassword({ isVisible, setVisible }: Props) {
   }
 
   return (
-    <Incubator.Dialog
-      centerH
-      centerV
-      bottom
-      visible={isVisible}
-      onDismiss={() => setVisible(false)}
-      containerStyle={styles.container}
-      headerProps={headerProps}>
+    <Modal isVisible={isVisible} setVisible={setVisible}>
       <Form
         data={user}
         schema={schema}
@@ -58,12 +41,6 @@ export function ForgotPassword({ isVisible, setVisible }: Props) {
         action={onSubmit}
         isLoading={false}
       />
-    </Incubator.Dialog>
+    </Modal>
   )
-}
-
-const styles = {
-  container: tailwind`p-3 w-70`,
-  titleStyle: tailwind`text-5 font-bold self-start`,
-  subtitleStyle: tailwind`self-start`
 }
