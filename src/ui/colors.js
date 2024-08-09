@@ -1,0 +1,16 @@
+module.exports = {
+  backgroundLight: '#EDF1F7',
+  backgroundDark: '#0F0F0F',
+  textLight: '#222B45',
+  textDark: '#E8E8E8',
+  cardLight: '#F7F9FC',
+  cardDark: '#272727',
+  placeHolderDark: '#838383',
+  placeHolderLight: '#7D7D7D',
+  errorDark: '#CF6679',
+  errorLight: '#B00020',
+  success: '#28a745',
+  info: '#0000ff',
+  warning: '#ffff00',
+  primary: '#a78bfa',
+};

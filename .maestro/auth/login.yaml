@@ -1,0 +1,28 @@
+appId: ${APP_ID}
+env:
+  EMAIL: 'juancarloslucenamonje@gmail.com'
+  PASSWORD: 'qwertqwe'
+---
+- assertVisible:
+    id: 'loading-button'
+- tapOn:
+    id: 'loading-button'
+- assertVisible:
+    id: 'emailInput-error'
+- assertVisible:
+    id: 'passwordInput-error'
+- tapOn:
+    id: 'email-input'
+- inputText: 'email'
+- assertVisible:
+    id: 'emailInput-error'
+- eraseText
+- inputText: ${EMAIL}
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: 'password-input'
+- inputText: ${PASSWORD}
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: 'loading-button'
+- assertVisible: 'Explore'

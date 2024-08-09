@@ -1,0 +1,51 @@
+{
+  "placeHolder": {
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full name",
+    "confirmPassword": "Confirm password"
+  },
+  "screens": {
+    "login": {
+      "description": "Your travel, your way, your itinerary",
+      "forgotPassword": "Forgot password?",
+      "notAccount": "Not account yet?",
+      "register": "Register"
+    },
+    "createTravel": {
+      "initialDate": "Initial date",
+      "endDate": "End date",
+      "initialDateHour": "Hour of inital date",
+      "endDateHour": "Hour of end date",
+      "hourStart": "Hour start",
+      "hourEnd": "Hour end",
+      "initialDateDescription": "Select the initial date of your travel",
+      "endDateDescription": "Select the end date of your travel",
+      "initialDateHourDescription": "Select the hour of the initial date",
+      "endDateHourDescription": "Select the hour of the end date",
+      "hourStartDescription": "Select the hour of the start",
+      "hourEndDescription": "Select the hour of the end"
+    }
+  },
+  "schema": {
+    "email": {
+      "required": "Email is required",
+      "invalid": "Email is invalid"
+    },
+    "password": {
+      "required": "Password is required",
+      "length": "Password must have at least 8 characters",
+      "minLength": "The minimun length is 8 characters",
+      "bothMustMatch": "Doesn't match with the above password"
+    },
+    "fullName": {
+      "required": "Full name is required"
+    }
+  },
+  "components": {
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "subtitle": "Insert your email to send you a confirm code"
+    }
+  }
+}

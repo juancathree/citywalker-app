@@ -1,0 +1,63 @@
+appId: ${APP_ID}
+env:
+  EMAIL: 'test@gmail.com'
+  FULLNAME: 'Juan Carlos'
+  PASSWORD: 'qwertqwe'
+---
+- assertVisible:
+    id: 'register-link'
+- tapOn:
+    id: 'register-link'
+- assertVisible:
+    id: 'title'
+- assertVisible:
+    id: 'loading-button'
+- tapOn:
+    id: 'loading-button'
+- assertVisible:
+    id: 'emailInput-error'
+- assertVisible:
+    id: 'passwordInput-error'
+- assertVisible:
+    id: 'fullNameInput-error'
+- assertVisible:
+    id: 'confirmPasswordInput-error'
+- tapOn:
+    id: 'email-input'
+- inputText: 'email'
+- assertVisible:
+    id: 'emailInput-error'
+- eraseText
+- inputText: ${EMAIL}
+- assertNotVisible:
+    id: 'emailInput-error'
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: 'fullName-input'
+- inputText: ${FULLNAME}
+- runFlow: ../utils/hide-keyboard.yaml
+- assertNotVisible:
+    id: 'fullName-error'
+- tapOn:
+    id: 'password-input'
+- inputText: ${PASSWORD}
+- assertNotVisible:
+    id: 'passwordInput-error'
+- runFlow: ../utils/hide-keyboard.yaml
+- tapOn:
+    id: 'confirmPassword-input'
+- inputText: 'testing'
+- assertVisible:
+    id: 'confirmPasswordInput-error'
+- eraseText
+- inputText: ${PASSWORD}
+- assertNotVisible:
+    id: 'confirmPasswordInput-error'
+- assertNotVisible: ${PASSWORD}
+- tapOn:
+    id: 'showPassword'
+- assertVisible: ${PASSWORD}
+- tapOn:
+    id: 'loading-button'
+- inputText: '1234'
+- assertVisible: 'Welcome to the app'
