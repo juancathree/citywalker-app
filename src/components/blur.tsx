@@ -1,11 +1,10 @@
 import { BlurView } from 'expo-blur';
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
-import tailwind from 'twrnc';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+import { useThemeConfig } from '@/core';
 
-export default function Blur() {
+export function Blur() {
   const platform = Platform.OS;
   const theme = useThemeConfig();
 
@@ -17,13 +16,16 @@ export default function Blur() {
           theme.dark ? 'systemThickMaterialDark' : 'systemThickMaterialLight'
         }
         experimentalBlurMethod="dimezisBlurView"
-        style={{
-          ...StyleSheet.absoluteFillObject,
-          overflow: 'hidden',
-        }}
+        style={styles.blur}
       />
     );
   }
 
-  return <View style={tailwind`h-100 bg-[${theme.colors.card}]`} />;
+  return <View className="h-full bg-cardLight dark:bg-cardDark" />;
 }
+
+const styles = {
+  blur: {
+    ...StyleSheet.absoluteFillObject,
+  },
+};

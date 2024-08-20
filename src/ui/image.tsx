@@ -3,8 +3,8 @@ import { Image as NImage } from 'expo-image';
 import { cssInterop } from 'nativewind';
 import * as React from 'react';
 
-export type ImgProps = ImageProps & {
-  className?: string;
+type Props = ImageProps & {
+  uuid: string;
 };
 
 cssInterop(NImage, { className: 'style' });
@@ -12,13 +12,17 @@ cssInterop(NImage, { className: 'style' });
 const blurhash =
   '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
-export const Image = ({ style, className, ...props }: ImgProps) => {
+export const Image = ({ uuid, ...rest }: Props) => {
   return (
     <NImage
-      className={className}
+      className="h-full w-full"
       placeholder={{ blurhash }}
-      style={style}
-      {...props}
+      cachePolicy={'memory-disk'}
+      contentFit="cover"
+      source={{
+        uri: `https://ik.imagekit.io/aacivfepey/${uuid}.jpg`,
+      }}
+      {...rest}
     />
   );
 };

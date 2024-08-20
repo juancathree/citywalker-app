@@ -1,14 +1,12 @@
 import { Redirect, SplashScreen, Tabs, useSegments } from 'expo-router';
 import React, { useCallback, useEffect } from 'react';
 
-import Blur from '@/components/blur';
+import { Blur } from '@/components';
 import { useAuth } from '@/core';
-import { useThemeConfig } from '@/core/use-theme-config';
-import { Icon } from '@/ui/icon';
+import { Icon } from '@/ui';
 
 export default function TabLayout() {
-  const status = useAuth.use.status();
-  const theme = useThemeConfig();
+  const { status } = useAuth();
   const segment = useSegments();
   const hideSplash = useCallback(async () => {
     await SplashScreen.hideAsync();
@@ -26,6 +24,12 @@ export default function TabLayout() {
     return <Redirect href="/login" />;
   }
 
+  const tabBackground = () => <Blur />;
+
+  const icon = (name: string, focused: boolean) => {
+    return <Icon testID={`${name}Tab`} name={name} isFocused={focused} />;
+  };
+
   return (
     <Tabs
       screenOptions={{
@@ -34,20 +38,15 @@ export default function TabLayout() {
           position: 'absolute',
           display: segment.length > 2 ? 'none' : 'flex',
         },
-        tabBarBackground: () => <Blur />,
+        tabBarBackground: tabBackground,
       }}
-    // tabBar={(props) =>
-    //   segment.length > 2 ? null : <BottomTabBar {...props} />
-    // }
     >
       <Tabs.Screen
         name="(explore)"
         options={{
           title: 'Explore',
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => (
-            <Icon name="Explore" isFocused={focused} />
-          ),
+          tabBarIcon: ({ focused }) => icon('explore', focused),
         }}
       />
 
@@ -56,9 +55,7 @@ export default function TabLayout() {
         options={{
           title: 'Travels',
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => (
-            <Icon name="Travels" isFocused={focused} />
-          ),
+          tabBarIcon: ({ focused }) => icon('travels', focused),
         }}
       />
       <Tabs.Screen
@@ -66,9 +63,7 @@ export default function TabLayout() {
         options={{
           title: 'Account',
           tabBarShowLabel: false,
-          tabBarIcon: ({ focused }) => (
-            <Icon name="Account" isFocused={focused} />
-          ),
+          tabBarIcon: ({ focused }) => icon('account', focused),
         }}
       />
     </Tabs>

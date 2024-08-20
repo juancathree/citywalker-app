@@ -14,6 +14,7 @@ import Edit from 'assets/icons/edit.svg';
 import Explore from 'assets/icons/explore.svg';
 import ExploreO from 'assets/icons/explore-o.svg';
 import Forward from 'assets/icons/forward.svg';
+import Hotel from 'assets/icons/hotel.svg';
 import Info from 'assets/icons/info.svg';
 import Lock from 'assets/icons/lock.svg';
 import LockO from 'assets/icons/lock-o.svg';
@@ -24,10 +25,13 @@ import Market from 'assets/icons/market.svg';
 import Monument from 'assets/icons/monument.svg';
 import Museum from 'assets/icons/museum.svg';
 import Neighborhood from 'assets/icons/neighborhood.svg';
+import Other from 'assets/icons/other.svg';
 import Park from 'assets/icons/park.svg';
+import Restaurant from 'assets/icons/restaurant.svg';
 import Search from 'assets/icons/search.svg';
 import Street from 'assets/icons/street.svg';
 import Time from 'assets/icons/time.svg';
+import Transport from 'assets/icons/transport.svg';
 import Travel from 'assets/icons/travel.svg';
 import TravelO from 'assets/icons/travel-o.svg';
 import User from 'assets/icons/user.svg';
@@ -36,16 +40,10 @@ import Visibility from 'assets/icons/visibility.svg';
 import VisibilityO from 'assets/icons/visibility-o.svg';
 import type { FC } from 'react';
 import React from 'react';
+import { TouchableOpacity, type TouchableOpacityProps } from 'react-native';
 import type { SvgProps } from 'react-native-svg';
 
-import { useThemeConfig } from '@/core/use-theme-config';
-
-type Props = {
-  name: string;
-  isFocused?: boolean;
-  fill?: string;
-  [key: string]: any;
-};
+import { useThemeConfig } from '@/core/useThemeConfig';
 
 interface Icons {
   [key: string]: {
@@ -75,15 +73,15 @@ const icons: Icons = {
     unfocused: VisibilityO,
     focused: Visibility,
   },
-  Explore: {
+  explore: {
     focused: Explore,
     unfocused: ExploreO,
   },
-  Travels: {
+  travels: {
     focused: Travel,
     unfocused: TravelO,
   },
-  Account: {
+  account: {
     focused: Account,
     unfocused: AccountO,
   },
@@ -125,7 +123,7 @@ const icons: Icons = {
     unfocused: Dates,
     focused: Dates,
   },
-  Categories: {
+  categories: {
     unfocused: Categories,
   },
   park: {
@@ -156,7 +154,25 @@ const icons: Icons = {
     unfocused: Time,
     focused: Time,
   },
+  restaurant: {
+    unfocused: Restaurant,
+  },
+  hotel: {
+    unfocused: Hotel,
+  },
+  transport: {
+    unfocused: Transport,
+  },
+  other: {
+    unfocused: Other,
+  },
 };
+
+type Props = {
+  name: string;
+  isFocused?: boolean;
+  fill?: string;
+} & TouchableOpacityProps;
 
 export function Icon({ name, isFocused = false, fill, ...rest }: Props) {
   const theme = useThemeConfig();
@@ -168,6 +184,14 @@ export function Icon({ name, isFocused = false, fill, ...rest }: Props) {
 
   if (!IconComponent) {
     return null;
+  }
+
+  if (rest.onPress) {
+    return (
+      <TouchableOpacity {...rest}>
+        <IconComponent fill={fillColor} />
+      </TouchableOpacity>
+    );
   }
 
   return <IconComponent fill={fillColor} {...rest} />;

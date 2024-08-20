@@ -1,19 +1,21 @@
-import { useThemeConfig } from '@/core/use-theme-config';
-import View from '@/ui/view';
+import type { PropsWithChildren } from 'react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Incubator } from 'react-native-ui-lib';
 import tailwind from 'twrnc';
 
-type Props = {
+import { useThemeConfig } from '@/core';
+import { View } from '@/ui';
+
+type Props = PropsWithChildren<{
   isVisible: boolean;
   hideModal: () => void;
-  children?: React.ReactNode;
-};
+}>;
 
-export default function Modal({ children, isVisible, hideModal }: Props) {
+export function Modal({ children, isVisible, hideModal }: Props) {
   const { t } = useTranslation();
-  const theme = useThemeConfig()
+  const theme = useThemeConfig();
+
   const headerProps: Incubator.DialogHeaderProps = {
     title: t('components.forgotPassword.title')!,
     titleStyle: tailwind`text-5 font-bold self-start text-[${theme.colors.text}]`,

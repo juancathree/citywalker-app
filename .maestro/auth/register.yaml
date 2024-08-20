@@ -5,59 +5,72 @@ env:
   PASSWORD: 'qwertqwe'
 ---
 - assertVisible:
-    id: 'register-link'
+    id: 'registerLink'
 - tapOn:
-    id: 'register-link'
+    id: 'registerLink'
 - assertVisible:
     id: 'title'
 - assertVisible:
-    id: 'loading-button'
+    id: 'loadingButton'
 - tapOn:
-    id: 'loading-button'
+    id: 'loadingButton'
 - assertVisible:
-    id: 'emailInput-error'
+    id: 'emailInputError'
 - assertVisible:
-    id: 'passwordInput-error'
+    id: 'passwordInputError'
 - assertVisible:
-    id: 'fullNameInput-error'
+    id: 'fullNameInputError'
 - assertVisible:
-    id: 'confirmPasswordInput-error'
+    id: 'confirmPasswordInputError'
 - tapOn:
-    id: 'email-input'
+    id: 'emailInput'
 - inputText: 'email'
 - assertVisible:
-    id: 'emailInput-error'
+    id: 'emailInputError'
 - eraseText
 - inputText: ${EMAIL}
 - assertNotVisible:
-    id: 'emailInput-error'
+    id: 'emailInput-Error'
 - runFlow: ../utils/hide-keyboard.yaml
 - tapOn:
-    id: 'fullName-input'
+    id: 'fullNameInput'
 - inputText: ${FULLNAME}
 - runFlow: ../utils/hide-keyboard.yaml
 - assertNotVisible:
-    id: 'fullName-error'
+    id: 'fullNameError'
 - tapOn:
-    id: 'password-input'
+    id: 'passwordInput'
 - inputText: ${PASSWORD}
 - assertNotVisible:
-    id: 'passwordInput-error'
+    id: 'passwordInputError'
 - runFlow: ../utils/hide-keyboard.yaml
 - tapOn:
-    id: 'confirmPassword-input'
+    id: 'confirmPasswordInput'
 - inputText: 'testing'
 - assertVisible:
-    id: 'confirmPasswordInput-error'
+    id: 'confirmPasswordInputError'
 - eraseText
 - inputText: ${PASSWORD}
 - assertNotVisible:
-    id: 'confirmPasswordInput-error'
+    id: 'confirmPasswordInputError'
 - assertNotVisible: ${PASSWORD}
 - tapOn:
     id: 'showPassword'
 - assertVisible: ${PASSWORD}
 - tapOn:
-    id: 'loading-button'
+    id: 'loadingButton'
+- assertVisible:
+    id: 'confirmCodeText'
 - inputText: '1234'
-- assertVisible: 'Welcome to the app'
+- assertVisible: 'Explore'
+- assertVisible:
+    id: 'accountTab'
+- tapOn:
+    id: 'accountTab'
+- assertVisible: 'Account'
+- assertVisible:
+    id: 'signOutButton'
+- tapOn:
+    id: 'signOutButton'
+- assertVisible:
+    id: 'title'

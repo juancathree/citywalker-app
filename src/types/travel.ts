@@ -1,12 +1,14 @@
 import type { Place } from './place';
 
 export type Travel = {
+  _id: string;
   city: string;
   schedule: Schedule;
   discardedCategories: string[];
   placesToEnter: string[];
-  itinerary?: Itinerary[][];
-  expenses?: Expenses;
+  itinerary: Itinerary[][];
+  geometry: string[];
+  expenses: Expenses;
 };
 
 export type Schedule = {
@@ -31,4 +33,13 @@ export type Expenses = {
 export type Expense = {
   price: number;
   description: string;
+  category: Categories;
 };
+
+export enum Categories {
+  RESTAURANT = 'restaurant',
+  HOTEL = 'hotel',
+  TRANSPORT = 'transport',
+  ATTRACTION = 'attractions',
+  OTHER = 'other',
+}

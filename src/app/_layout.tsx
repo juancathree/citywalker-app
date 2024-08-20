@@ -10,8 +10,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Toast from 'react-native-toast-message';
 
 import { APIProvider } from '@/api';
-import { hydrateAuth, loadSelectedTheme } from '@/core';
-import { useThemeConfig } from '@/core/use-theme-config';
+import { hydrateAuth, loadSelectedTheme, useThemeConfig } from '@/core';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -45,6 +44,10 @@ function RootLayoutNav() {
         <Stack.Screen name="login" />
         <Stack.Screen name="register" />
         <Stack.Screen name="confirmCode" options={{ presentation: 'modal' }} />
+        <Stack.Screen
+          name="forgotPassword"
+          options={{ presentation: 'modal' }}
+        />
       </Stack>
     </Providers>
   );

@@ -1,20 +1,24 @@
+import type { PropsWithChildren } from 'react';
 import React from 'react';
 import { ImageBackground } from 'react-native';
-import tailwind from 'twrnc';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+import { useThemeConfig } from '@/core/useThemeConfig';
 
-type Props = {
-  children: React.ReactNode;
-};
+type Props = PropsWithChildren<{}>;
 
 export function Background({ children }: Props) {
   const theme = useThemeConfig();
   const bg = theme.dark
     ? require('assets/images/backgroundDark.png')
     : require('assets/images/backgroundLight.png');
+
   return (
-    <ImageBackground source={bg} style={tailwind`flex-1`}>
+    <ImageBackground
+      testID="backgroundImage"
+      source={bg}
+      className="flex-1"
+      imageStyle={{ transform: [{ rotate: '180deg' }] }}
+    >
       {children}
     </ImageBackground>
   );

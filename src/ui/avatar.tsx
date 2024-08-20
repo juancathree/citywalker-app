@@ -8,7 +8,8 @@ import tailwind from 'twrnc';
 type Props = {
   fullName: string;
 };
-export default function Avatar({ fullName }: Props) {
+
+export function Avatar({ fullName }: Props) {
   const avatar = createAvatar(funEmoji, {
     seed: fullName,
     radius: 50,

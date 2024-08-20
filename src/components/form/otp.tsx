@@ -1,43 +1,38 @@
-import { useNavigation, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { OtpInput } from 'react-native-otp-entry';
 import Toast from 'react-native-toast-message';
 import tailwind from 'twrnc';
 
-import { useRegister } from '@/api/auth/useRegister';
-import { useAuth } from '@/core';
-import { getUser } from '@/core/auth/utils';
-import { useThemeConfig } from '@/core/use-theme-config';
+import { useAuth } from '@/core/hooks/useAuth';
+import { useThemeConfig } from '@/core/useThemeConfig';
 
-export default function OTP() {
+type Props = {
+  route: string;
+};
+
+export function OTP({ route }: Props) {
   const theme = useThemeConfig();
-  const signIn = useAuth.use.signIn();
-  const user = getUser();
-  const navigation = useNavigation();
+  const { user, confirmCode, register } = useAuth();
+  const { t } = useTranslation();
   const router = useRouter();
-  const { mutate: register } = useRegister();
-
-  const onSuccess = (response: any) => {
-    signIn(response.jwt, response.user);
-    Toast.show({
-      type: 'success',
-      text1: 'Welcome to the app',
-      text2: 'You are now logged in',
-    });
-    router.push('/');
-  };
 
   const action =
-    navigation.getState().routes[navigation.getState().index - 1]?.name ===
-      'Login'
+    route === 'login'
       ? () => router.push('/forgotPassword')
-      : () => register(user, { onSuccess: onSuccess });
+      : () => register(user);
 
   const onEndEntry = (code: string) => {
-    if (code === user.confirmCode) {
+    if (code === confirmCode) {
       action();
     } else {
-      console.log('error');
+      Toast.show({
+        type: 'error',
+        text1: t('toast.otp.invalidCodeTitle')!,
+        text2: t('toast.otp.invalidCodeDescription')!,
+        topOffset: 80,
+      });
     }
   };
 

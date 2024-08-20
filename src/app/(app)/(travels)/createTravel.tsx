@@ -11,7 +11,8 @@ import tailwind from 'twrnc';
 import { useCreateTravel } from '@/api/travel/useCreateTravel';
 import Blur from '@/components/blur';
 import { LoadingButton } from '@/components/form/loadingButton';
-import { useThemeConfig } from '@/core/use-theme-config';
+import { addTravel } from '@/core/store/travels';
+import { useThemeConfig } from '@/core/useThemeConfig';
 import type { City } from '@/types/city';
 import type { Travel } from '@/types/travel';
 import Card from '@/ui/card';
@@ -144,7 +145,9 @@ export default function CreateTravel() {
               <Text style={tailwind`font-bold text-4`}>
                 {t(`screens.createTravel.${key}`)}
               </Text>
-              <Text>{t(`screens.createTravel.${key}Description`)}</Text>
+              <Text style={tailwind`w-60`}>
+                {t(`screens.createTravel.${key}Description`)}
+              </Text>
             </View>
             <TouchableOpacity
               onPress={() =>
@@ -176,7 +179,10 @@ export default function CreateTravel() {
   );
 
   const categories = (
-    <View style={tailwind`flex-1 w-full items-center justify-center`}>
+    <View style={tailwind`flex-1 w-full items-center justify-center gap-10`}>
+      <Text style={tailwind`text-6 text-center`}>
+        Select the categories you are not interested in visiting
+      </Text>
       <View
         style={tailwind`flex-row gap-3 flex-wrap items-center justify-center`}
       >
@@ -194,8 +200,8 @@ export default function CreateTravel() {
           >
             <Card
               style={tailwind`p-3 self-center rounded shadow flex-row items-center gap-3 ${categorySelected.includes(category)
-                  ? `bg-[${theme.colors.primary}]`
-                  : ``
+                ? `bg-[${theme.colors.primary}]`
+                : ``
                 }`}
             >
               <Icon
@@ -253,8 +259,8 @@ export default function CreateTravel() {
               >
                 <Card
                   style={tailwind`rounded p-2 shadow items-center justify-center gap-2 ${entries.includes(place.name)
-                      ? `bg-[${theme.colors.primary}]`
-                      : ``
+                    ? `bg-[${theme.colors.primary}]`
+                    : ``
                     }`}
                 >
                   <Text style={tailwind`font-bold text-center`}>
@@ -320,13 +326,14 @@ export default function CreateTravel() {
               endDate: dates.endDate.date,
               hourInitialDate: dates.initialDateHour.date,
               hourStart: dates.hourStart.date,
-              hourEnd: dates.endDateHour.date,
-              hourEndDate: dates.hourEnd.date,
+              hourEnd: dates.hourEnd.date,
+              hourEndDate: dates.endDateHour.date,
             },
           });
           console.log(travel);
           createTravel(travel!, {
             onSuccess: (response) => {
+              addTravel(response.travel);
               router.replace('/(travels)');
             },
             onError: (data) => {

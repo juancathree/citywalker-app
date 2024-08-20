@@ -36,6 +36,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       backgroundColor: '#2E3C4B',
     },
     package: Env.PACKAGE,
+    config: {
+      googleMaps: {
+        apiKey: 'AIzaSyAyORP2XAtgwWUyZU8aytDoKkxTJFDLck4',
+      },
+    },
   },
   web: {
     favicon: './assets/favicon.png',

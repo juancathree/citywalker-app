@@ -1,16 +1,15 @@
 import React from 'react';
-import { View as RNView } from 'react-native';
-import tailwind from 'twrnc';
+import type { ViewProps } from 'react-native';
+import { View } from 'react-native';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+type Props = {
+  className?: string;
+} & ViewProps;
 
-type Props = React.ComponentProps<typeof RNView>;
-
-export default function Card({ children, style, ...rest }: Props) {
-  const theme = useThemeConfig();
+export function Card({ children, className, ...rest }: Props) {
   return (
-    <RNView style={[tailwind`bg-[${theme.colors.card}]`, style]} {...rest}>
+    <View className={`bg-cardLight dark:bg-cardDark ${className}`} {...rest}>
       {children}
-    </RNView>
+    </View>
   );
 }

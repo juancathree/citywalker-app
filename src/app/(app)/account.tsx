@@ -1,4 +1,3 @@
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { Divider } from '@ui-kitten/components';
 import React from 'react';
 import { Switch, TouchableOpacity, View } from 'react-native';
@@ -6,18 +5,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import tailwind from 'twrnc';
 
 import { useAuth, useSelectedTheme } from '@/core';
-import { getUser } from '@/core/auth/utils';
-import { useThemeConfig } from '@/core/use-theme-config';
-import Avatar from '@/ui/avatar';
-import Card from '@/ui/card';
-import { Icon } from '@/ui/icon';
-import Text from '@/ui/text';
+import { useThemeConfig } from '@/core/useThemeConfig';
+import { Avatar, Card, Icon, Text } from '@/ui';
 
 export default function Account() {
   const theme = useThemeConfig();
   const { selectedTheme, setSelectedTheme } = useSelectedTheme();
-  const user = getUser();
-  const signOut = useAuth.use.signOut();
+  const { user, signOut } = useAuth();
   const [activeChecked, setActiveChecked] = React.useState(
     selectedTheme === 'dark'
   );
@@ -67,7 +61,7 @@ export default function Account() {
           </TouchableOpacity>
         </Card>
         <View style={tailwind`flex-1 justify-end`}>
-          <TouchableOpacity onPress={signOut}>
+          <TouchableOpacity testID="signOutButton" onPress={signOut}>
             <Card style={tailwind`p-3 rounded shadow`}>
               <Card style={tailwind`flex-row items-center gap-3`}>
                 <Icon name="logout" fill={theme.colors.error} />

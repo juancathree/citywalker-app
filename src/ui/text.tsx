@@ -1,22 +1,17 @@
 import React from 'react';
+import type { TextProps } from 'react-native';
 import { Text as RNText } from 'react-native';
-import tailwind from 'twrnc';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+type Props = {
+  className?: string;
+} & TextProps;
 
-type Props = React.ComponentProps<typeof RNText>;
-
-export default function Text({ children, style, ...rest }: Props) {
-  const theme = useThemeConfig();
+export function Text({ children, className, ...rest }: Props) {
   return (
     <RNText
       {...rest}
-      className="font-kaushan"
-      style={[
-        tailwind`text-[${theme.colors.text}]`,
-        style,
-        { fontFamily: 'kaushan' },
-      ]}
+      className={`text-textLight dark:text-textDark ${className}`}
+      {...rest}
     >
       {children}
     </RNText>

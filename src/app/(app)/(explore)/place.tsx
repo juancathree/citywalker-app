@@ -4,15 +4,10 @@ import { Alert, Linking, ScrollView, TouchableOpacity } from 'react-native';
 import Animated from 'react-native-reanimated';
 import tailwind from 'twrnc';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+import { useThemeConfig } from '@/core/useThemeConfig';
 import type { Place } from '@/types/place';
-import { View } from '@/ui';
-import Card from '@/ui/card';
-import { Icon } from '@/ui/icon';
-import { Link } from '@/ui/link';
-import Text from '@/ui/text';
+import { Card, Icon, Link, Text, View } from '@/ui';
 
-// eslint-disable-next-line max-lines-per-function
 export default function Place() {
   const { place } = useLocalSearchParams();
   const parsedData: Place = JSON.parse(place as string);

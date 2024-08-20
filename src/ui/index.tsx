@@ -1,28 +1,23 @@
 import { cssInterop } from 'nativewind';
 import Svg from 'react-native-svg';
 
-export * from './button';
-export * from './checkbox';
+export * from './animatedImage';
+export * from './avatar';
+export * from './background';
+export * from './card';
 export { default as colors } from './colors';
-export * from './focus-aware-status-bar';
+export * from './divider';
+export * from './focusAwareStatusBar';
+export * from './icon';
 export * from './image';
-export * from './input';
-export * from './list';
-export * from './modal';
-export * from './progress-bar';
-export * from './select';
+export * from './image';
+export * from './link';
+export * from './listSeparator';
 export * from './text';
+export * from './text';
+export * from './title';
 export * from './utils';
-
-// export base components from react-native
-export {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-export { SafeAreaView } from 'react-native-safe-area-context';
+export * from './view';
 
 //Apply cssInterop to Svg to resolve className string into style
 cssInterop(Svg, {

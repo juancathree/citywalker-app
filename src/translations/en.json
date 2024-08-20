@@ -10,21 +10,39 @@
       "description": "Your travel, your way, your itinerary",
       "forgotPassword": "Forgot password?",
       "notAccount": "Not account yet?",
-      "register": "Register"
+      "register": "Register",
+      "loginButton": "Login"
     },
     "createTravel": {
       "initialDate": "Initial date",
       "endDate": "End date",
-      "initialDateHour": "Hour of inital date",
+      "initialDateHour": "Hour of initial date",
       "endDateHour": "Hour of end date",
       "hourStart": "Hour start",
       "hourEnd": "Hour end",
-      "initialDateDescription": "Select the initial date of your travel",
-      "endDateDescription": "Select the end date of your travel",
-      "initialDateHourDescription": "Select the hour of the initial date",
-      "endDateHourDescription": "Select the hour of the end date",
-      "hourStartDescription": "Select the hour of the start",
-      "hourEndDescription": "Select the hour of the end"
+      "initialDateDescription": "This is the day you will start the itinerary",
+      "endDateDescription": "This is the last day of your itinerary",
+      "initialDateHourDescription": "This is the time the itinerary will begin on the first day",
+      "endDateHourDescription": "This is the time when you will finish the itinerary on the last day",
+      "hourStartDescription": "This is the time when you will start the itinerary on middle days",
+      "hourEndDescription": "This is the time when you will finish the itinerary on middle days"
+    },
+    "register": {
+      "registerButton": "Register",
+      "title": "Register"
+    },
+    "confirmCode": {
+      "description": "Insert the code we just send you"
+    },
+    "forgotPassword": {
+      "description": "Insert the new password"
+    },
+    "explore": {
+      "headerTitle": "Explore"
+    },
+    "city": {
+      "createTravel": "Create travel",
+      "headerTitle": "Places"
     }
   },
   "schema": {
@@ -45,7 +63,28 @@
   "components": {
     "forgotPassword": {
       "title": "Forgot password?",
-      "subtitle": "Insert your email to send you a confirm code"
+      "subtitle": "Insert your email to send you a confirm code",
+      "send": "Send"
+    },
+    "cityInformation": {
+      "visa": "Check if you need a visa",
+      "continent": "Continent",
+      "country": "Country",
+      "adapterPlug": "Adapter plug",
+      "currency": "Currency",
+      "lngSpoken": "Language"
+    }
+  },
+  "toast": {
+    "login": {
+      "wrongCredentialsTitle": "Wrong credentials",
+      "wrongCredentialsDescription": "The email or password is incorrect",
+      "serverErrorTitle": "Server error",
+      "serverErrorDescription": "An error occurred while trying to login, try again later"
+    },
+    "otp": {
+      "invalidCodeDescription": "Check the OPT code in your email",
+      "invalidCodeTitle": "Wrong OTP code"
     }
   }
 }

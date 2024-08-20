@@ -1,7 +1,7 @@
 import type { AxiosError } from 'axios';
 import { createQuery } from 'react-query-kit';
 
-import { getToken } from '@/core/auth/utils';
+import { getToken } from '@/core/store/auth/utils';
 import type { Place } from '@/types/place';
 
 import { client } from '../common';

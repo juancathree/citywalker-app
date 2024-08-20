@@ -1,7 +1,7 @@
 import type { AxiosError } from 'axios';
 import { createMutation } from 'react-query-kit';
 
-import { getToken } from '@/core/auth/utils';
+import { getToken } from '@/core/store/auth/utils';
 import type { Travel } from '@/types/travel';
 
 import { client } from '../common';

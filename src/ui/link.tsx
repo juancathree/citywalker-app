@@ -1,11 +1,11 @@
 import React from 'react';
+import type { TouchableOpacityProps } from 'react-native';
 import { Text, TouchableOpacity } from 'react-native';
 
 type Props = {
   text: string;
   action: () => void;
-  [key: string]: any; // Allow additional props
-};
+} & TouchableOpacityProps;
 
 export function Link({ text, action, ...rest }: Props) {
   return (

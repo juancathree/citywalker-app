@@ -1,15 +1,17 @@
 import React from 'react';
+import type { ViewProps } from 'react-native';
 import { View as RNView } from 'react-native';
-import tailwind from 'twrnc';
 
-import { useThemeConfig } from '@/core/use-theme-config';
+type Props = {
+  className?: string;
+} & ViewProps;
 
-type Props = React.ComponentProps<typeof RNView>;
-
-export default function View({ children, ...rest }: Props) {
-  const theme = useThemeConfig();
+export function View({ children, className, ...rest }: Props) {
   return (
-    <RNView style={tailwind`bg-[${theme.colors.background}]`} {...rest}>
+    <RNView
+      className={`bg-backgroundLight dark:bg-backgroundDark ${className}`}
+      {...rest}
+    >
       {children}
     </RNView>
   );
